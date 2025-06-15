@@ -1,0 +1,51 @@
+### To Do
+
+- [x] Initialize the project
+
+- [x] Create the project's components
+
+  - [x] Typography (add font-family & font-sizes)
+  - [x] Top Header
+  - [x] Header
+  - [x] Image Slider
+  - [x] Aside
+  - [x] Section Component
+  - [x] Flash Sales
+  - [x] Buttons with variants
+  - [x] flash sales countdown
+  - [x] rating dynamically
+  - [x] productCard
+  - [x] CategoryCard
+  - [x] Categories
+  - [x] Our products
+  - [x] Sale countDown
+  - [x] Sercvices
+  - [x] Explore products
+  - [x] Featured
+  - [x] Footer
+
+- [] Create the project's Pages
+  - [x] Error page
+  - [x] Contact page
+  - [x] About page
+  - [x] Sign up page
+  - [x] Sign page
+  - [x] Wishlist
+  - [x] cart
+  - [x] The Product Details Page
+  - [x] add more than one color
+  - [x] Categories page
+  - [x] payment success page
+- [] Project's functionality
+  - [x] Responsiveness
+  - [x] Add items to favorites
+  - [x] Add items to Cart
+  - [x] make the cart list responsive
+  - [x] make the account dropdown menu
+  - [x] Search for products
+  - [x] Authentication
+  - [x] Checkout and payment
+  - [x] Enable Rating
+- Bonus
+  - [x] Using Firebase or Supabase
+  - [x] Support more than two languages using any library

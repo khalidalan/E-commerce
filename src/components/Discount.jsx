@@ -52,7 +52,7 @@ function Discount() {
               <div className="relative z-10 flex justify-center items-center">
                 <img
                   className="w-full max-w-[200px] sm:max-w-[280px] lg:max-w-[400px] h-auto object-contain filter drop-shadow-2xl transform hover:scale-105 transition-transform duration-500"
-                  src="/public/JBL_BOOMBOX.webp"
+                  src="/JBL_BOOMBOX.webp"
                   alt="JBL Boombox Premium Speaker"
                 />
               </div>

@@ -1,20 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-black text-white pt-16 ">
       <div className="container !px-6">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-          {/* Exclusive Section */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold inter">Exclusive</h3>
+            <h3 className="text-2xl font-bold inter">{t("footer.exclusive")}</h3>
             <div className="space-y-4">
-              <h4 className="text-xl font-medium">Subscribe</h4>
-              <p className="text-gray-300">Get 10% off your first order</p>
+              <h4 className="text-xl font-medium">{t("footer.subscribe")}</h4>
+              <p className="text-gray-300">{t("footer.subscribeOffer")}</p>
               <div className="relative">
                 <input
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder={t("footer.enterEmail")}
                   className="w-full bg-transparent border border-gray-600 rounded px-4 py-3 pr-12 text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors"
                 />
                 <button className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors">
@@ -37,143 +40,83 @@ function Footer() {
             </div>
           </div>
 
-          {/* Support Section */}
           <div className="space-y-6">
-            <h3 className="text-xl font-medium">Support</h3>
+            <h3 className="text-xl font-medium">{t("footer.support")}</h3>
             <div className="space-y-4 text-gray-300">
-              <p>
-                111 Bijoy sarani, Dhaka,
-                <br />
-                DH 1515, Bangladesh.
-              </p>
-              <p>exclusive@gmail.com</p>
-              <p>+88015-88888-9999</p>
+              <p>{t("footer.address")}</p>
+              <p>{t("footer.email")}</p>
+              <p>{t("footer.phone")}</p>
             </div>
           </div>
 
-          {/* Account Section */}
           <div className="space-y-6">
-            <h3 className="text-xl font-medium">Account</h3>
+            <h3 className="text-xl font-medium">{t("footer.account")}</h3>
             <div className="space-y-3">
-              <a
-                href="#"
-                className="block text-gray-300 hover:text-white transition-colors"
-              >
-                My Account
-              </a>
-              <a
-                href="#"
-                className="block text-gray-300 hover:text-white transition-colors"
-              >
-                Login / Register
-              </a>
-              <a
-                href="#"
-                className="block text-gray-300 hover:text-white transition-colors"
-              >
-                Cart
-              </a>
-              <a
-                href="#"
-                className="block text-gray-300 hover:text-white transition-colors"
-              >
-                Wishlist
-              </a>
-              <a
-                href="#"
-                className="block text-gray-300 hover:text-white transition-colors"
-              >
-                Shop
-              </a>
+              <Link to="/account" className="block text-gray-300 hover:text-white transition-colors">
+                {t("footer.myAccount")}
+              </Link>
+              <Link to="/login" className="block text-gray-300 hover:text-white transition-colors">
+                {t("footer.loginRegister")}
+              </Link>
+              <Link to="/cart" className="block text-gray-300 hover:text-white transition-colors">
+                {t("navigation.cart")}
+              </Link>
+              <Link to="/wishlist" className="block text-gray-300 hover:text-white transition-colors">
+                {t("navigation.wishlist")}
+              </Link>
+              <Link to="/products" className="block text-gray-300 hover:text-white transition-colors">
+                {t("footer.shop")}
+              </Link>
             </div>
           </div>
 
-          {/* Quick Link Section */}
           <div className="space-y-6">
-            <h3 className="text-xl font-medium">Quick Link</h3>
+            <h3 className="text-xl font-medium">{t("footer.quickLink")}</h3>
             <div className="space-y-3">
-              <a
-                href="#"
-                className="block text-gray-300 hover:text-white transition-colors"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="block text-gray-300 hover:text-white transition-colors"
-              >
-                Terms Of Use
-              </a>
-              <a
-                href="#"
-                className="block text-gray-300 hover:text-white transition-colors"
-              >
-                FAQ
-              </a>
-              <a
-                href="#"
-                className="block text-gray-300 hover:text-white transition-colors"
-              >
-                Contact
-              </a>
+              <Link to="#" className="block text-gray-300 hover:text-white transition-colors">
+                {t("footer.privacyPolicy")}
+              </Link>
+              <Link to="#" className="block text-gray-300 hover:text-white transition-colors">
+                {t("footer.termsOfUse")}
+              </Link>
+              <Link to="#" className="block text-gray-300 hover:text-white transition-colors">
+                {t("footer.faq")}
+              </Link>
+              <Link to="/contact" className="block text-gray-300 hover:text-white transition-colors">
+                {t("navigation.contact")}
+              </Link>
             </div>
           </div>
 
-          {/* Download App Section */}
           <div className="space-y-6">
-            <h3 className="text-xl font-medium">Download App</h3>
+            <h3 className="text-xl font-medium">{t("footer.downloadApp")}</h3>
             <div className="space-y-4">
-              <p className="text-sm text-gray-400">
-                Save $3 with App New User Only
-              </p>
+              <p className="text-sm text-gray-400">{t("footer.appOffer")}</p>
 
-              {/* QR Code and App Store Links */}
               <div className="flex gap-3">
                 <img src="/public/Frame 719.png" alt="" />
               </div>
 
-              {/* Social Media Icons */}
               <div className="flex gap-6 pt-4">
-                <a
-                  href="#"
-                  className="text-white hover:text-gray-300 transition-colors"
-                >
+                <a href="#" className="text-white hover:text-gray-300 transition-colors">
                   <img src="/public/socialMediaIcon/Icon-Facebook.svg" alt="" />
                 </a>
-
-                <a
-                  href="#"
-                  className="text-white hover:text-gray-300 transition-colors"
-                >
-                                 <img src="/public/socialMediaIcon/Icon-Twitter.svg" alt="" />
-
+                <a href="#" className="text-white hover:text-gray-300 transition-colors">
+                  <img src="/public/socialMediaIcon/Icon-Twitter.svg" alt="" />
                 </a>
-
-                <a
-                  href="#"
-                  className="text-white hover:text-gray-300 transition-colors"
-                >
-                                    <img src="/public/socialMediaIcon/icon-instagram.svg" alt="" />
-
+                <a href="#" className="text-white hover:text-gray-300 transition-colors">
+                  <img src="/public/socialMediaIcon/icon-instagram.svg" alt="" />
                 </a>
-
-                <a
-                  href="#"
-                  className="text-white hover:text-gray-300 transition-colors"
-                >
-                                  <img src="/public/socialMediaIcon/Icon-Linkedin.svg" alt="" />
-
+                <a href="#" className="text-white hover:text-gray-300 transition-colors">
+                  <img src="/public/socialMediaIcon/Icon-Linkedin.svg" alt="" />
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="  mt-12 pt-8 pb-6 text-center">
-          <p className="text-gray-500">
-            © Copyright Rimel 2022. All right reserved
-          </p>
+        <div className="mt-12 pt-8 pb-6 text-center">
+          <p className="text-gray-500">{t("footer.copyright")}</p>
         </div>
       </div>
     </footer>

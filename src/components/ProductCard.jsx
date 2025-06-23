@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ProductCard = ({
   product,
   hovered,
@@ -5,7 +7,7 @@ const ProductCard = ({
   isWished,
   isInCart,
   toggleWishlist,
-  addToCart,
+  toggleCart,
 }) => {
   return (
     <div className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-gray-200">
@@ -24,6 +26,7 @@ const ProductCard = ({
             <span className="bg-emerald-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
               NEW
             </span>
+            
           )}
         </div>
 
@@ -50,27 +53,31 @@ const ProductCard = ({
               />
             </svg>
           </button>
-
-       
         </div>
 
         <div className="flex items-center justify-center h-full">
-          <img
-            className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500"
-            src={product.image}
-            alt={product.name}
-          />
+          <Link to={`/product/${product.id}`}>
+            <img
+              className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500"
+              src={product.image}
+              alt={product.name}
+            />
+          </Link>
         </div>
 
         <button
-          onClick={(e) => addToCart(product.id, e)}
-          className={`absolute bottom-0 left-0 right-0 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium py-3 transition-all duration-500 ease-out ${
+          onClick={(e) => toggleCart(product.id, e)}
+          className={`absolute bottom-0 left-0 right-0 font-medium py-3 transition-all duration-500 ease-out ${
             hovered === product.id
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-4 pointer-events-none"
+          } ${
+            isInCart
+              ? "bg-red-600 hover:bg-red-700 text-white"
+              : "bg-blue-600 hover:bg-blue-700 text-white"
           }`}
         >
-          {isInCart ? "Added to Cart ✓" : "Add to Cart"}
+          {isInCart ? "Remove from Cart" : "Add to Cart"}
         </button>
       </div>
 

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import Title from "./Title";
+import { useTranslation } from "react-i18next";
+
 
 function Timer() {
   const [timeLeft, setTimeLeft] = useState({
@@ -15,7 +17,6 @@ function Timer() {
       const next = new Date();
       next.setHours(12, 0, 0, 0);
       if (now >= next) {
-        // لو عدينا 12 الظهر، خليها لبكرة
         next.setDate(next.getDate() + 1);
       }
       return next;
@@ -28,7 +29,6 @@ function Timer() {
       const diff = endDate - now;
   
       if (diff <= 0) {
-        // تحديث التاريخ لليوم اللي بعده
         endDate = getNextEndDate();
       }
   
@@ -49,12 +49,13 @@ function Timer() {
 
   const formatNumber = (num) => (num < 10 ? `0${num}` : num);
 
+  const { t } = useTranslation();
   return (
     <div className="flex gap-30 ">
-      <Title title="Flash Sales" />
+      <Title title={t("flashSales.flashSales")} />
       <div className=" gap-4 hidden md:flex">
         <div className="flex flex-col items-start justify-center">
-          <p className="text-xs font-medium">Days</p>
+          <p className="text-xs font-medium">{t("flashSales.days")}</p>
           <p className="text-3xl font-bold inter">
             {formatNumber(timeLeft.days)}
           </p>
@@ -64,7 +65,7 @@ function Timer() {
           <span className="w-1 h-1 bg-blue-600 rounded-full"></span>
         </div>
         <div className="flex flex-col items-start justify-center">
-          <p className="text-xs font-medium">Hours</p>
+          <p className="text-xs font-medium">{t("flashSales.hours")}</p>
           <p className="text-3xl font-bold inter">
             {formatNumber(timeLeft.hours)}
           </p>
@@ -74,7 +75,7 @@ function Timer() {
           <span className="w-1 h-1 bg-blue-600 rounded-full"></span>
         </div>
         <div className="flex flex-col items-start justify-center">
-          <p className="text-xs font-medium">Minutes</p>
+          <p className="text-xs font-medium">{t("flashSales.minutes")}</p>
           <p className="text-3xl font-bold inter">
             {formatNumber(timeLeft.minutes)}
           </p>
@@ -84,7 +85,7 @@ function Timer() {
           <span className="w-1 h-1 bg-blue-600 rounded-full"></span>
         </div>
         <div className="flex flex-col items-start justify-center">
-          <p className="text-xs font-medium">Seconds</p>
+          <p className="text-xs font-medium">{t("flashSales.seconds")}</p>
           <p className="text-3xl font-bold inter">
             {formatNumber(timeLeft.seconds)}
           </p>

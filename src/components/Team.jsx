@@ -15,7 +15,7 @@ const TeamSlider = () => {
       name: "keanu reeves",
       position: "Founder & Chairman",
       image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop&crop=face",
+        "/person.webp",
       social: {
         twitter: "#",
         linkedin: "#",
@@ -28,7 +28,7 @@ const TeamSlider = () => {
       name: "robert downey jr",
       position: "Managing Director",
       image:
-        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=300&h=400&fit=crop&crop=face",
+        "/person1.webp",
       social: {
         twitter: "#",
         linkedin: "#",
@@ -41,7 +41,7 @@ const TeamSlider = () => {
       name: "Will Smith",
       position: "Product Designer",
       image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=400&fit=crop&crop=face",
+        "/person2.webp",
       social: {
         twitter: "#",
         linkedin: "#",
@@ -54,7 +54,7 @@ const TeamSlider = () => {
       name: "Ben Affleck",
       position: "Marketing Lead",
       image:
-        "https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?w=300&h=400&fit=crop&crop=face",
+        "/person3.webp",
       social: {
         twitter: "#",
         linkedin: "#",
@@ -67,7 +67,7 @@ const TeamSlider = () => {
       name: "Michael Brown",
       position: "Tech Director",
       image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=400&fit=crop&crop=face",
+       "/person4.webp",
       social: {
         twitter: "#",
         linkedin: "#",
@@ -78,7 +78,7 @@ const TeamSlider = () => {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12 ">
+    <div className="max-w-6xl mx-auto px-4 py-12 " dir="ltr">
       <div className="text-center mb-12">
        
       </div>
@@ -162,11 +162,7 @@ const TeamSlider = () => {
         ))}
       </Swiper>
 
-      {/* Custom Navigation Buttons */}
-      <div className="flex justify-center items-center mt-8 space-x-4">
-        <button className="swiper-button-prev !static !w-12 !h-12 !bg-white !shadow-lg rounded-full !text-blue-500 hover:!bg-blue-500 hover:!text-white transition-all duration-300 !mt-0 after:!text-lg after:!font-bold"></button>
-        <button className="swiper-button-next !static !w-12 !h-12 !bg-white !shadow-lg rounded-full !text-blue-500 hover:!bg-blue-500 hover:!text-white transition-all duration-300 !mt-0 after:!text-lg after:!font-bold"></button>
-      </div>
+     
 
       <style jsx>{`
         .team-swiper .swiper-pagination {

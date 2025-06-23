@@ -11,6 +11,7 @@ import Section from "../components/Section";
 import TopHeader from "../components/TopHeader";
 
 function Home() {
+
   return (
     <>
       <TopHeader />
@@ -23,7 +24,7 @@ function Home() {
       <BestSelling />
       <Discount />
       <OurProducts />
-      <div className="xl:mt-36 mt-20 "></div>
+      <div className="xl:mt-26 mt-20 "></div>
       <Featured />
       <div className="xl:mt-36 mt-20"></div>
       <Advantages />
@@ -35,4 +36,3 @@ function Home() {
 
 export default Home;
 
-// transition-all duration-300 ease-in-out

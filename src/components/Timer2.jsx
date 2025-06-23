@@ -1,61 +1,81 @@
 import { useEffect, useState } from "react";
-import Title from "./Title";
+import { useTranslation } from "react-i18next";
 
 function Timer2() {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+  const { t } = useTranslation();
+  const [endDate, setEndDate] = useState(getInitialEndDate());
+  const [timeLeft, setTimeLeft] = useState(getTimeLeft(getInitialEndDate()));
+
+  function getInitialEndDate() {
+    const now = new Date();
+    const target = new Date("2025-06-14T12:00:00");
+
+    return now >= target
+      ? new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000)
+      : target;
+  }
+
+  function getTimeLeft(targetDate) {
+    const now = new Date();
+    const diff = targetDate - now;
+
+    if (diff <= 0) return null;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    return { days, hours, minutes, seconds };
+  }
 
   useEffect(() => {
-    const endDate = new Date("2025-06-14T12:00:00");
+    const interval = setInterval(() => {
+      const updatedTime = getTimeLeft(endDate);
 
-    const updateTimer = () => {
-      const now = new Date();
-      const diff = endDate - now;
-
-      if (diff <= 0) {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-        return;
+      if (!updatedTime) {
+        const newEnd = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+        setEndDate(newEnd);
+        setTimeLeft(getTimeLeft(newEnd));
+      } else {
+        setTimeLeft(updatedTime);
       }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      setTimeLeft({ days, hours, minutes, seconds });
-    };
-
-    updateTimer();
-    const interval = setInterval(updateTimer, 1000);
+    }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [endDate]);
 
-  const formatNumber = (num) => (num < 10 ? `0${num}` : num);
+  const format = (n) => (n < 10 ? `0${n}` : n);
+
+  if (!timeLeft) return null;
 
   const timeUnits = [
-    { label: "Days", value: timeLeft.days },
-    { label: "Hours", value: timeLeft.hours },
-    { label: "Minutes", value: timeLeft.minutes },
-    { label: "Seconds", value: timeLeft.seconds },
+    { label: t("flashSales.days"), value: timeLeft.days },
+    { label: t("flashSales.hours"), value: timeLeft.hours },
+    { label: t("flashSales.minutes"), value: timeLeft.minutes },
+    { label: t("flashSales.seconds"), value: timeLeft.seconds },
+    
   ];
 
   return (
-    <div className="flex flex-col   ">
-      <div className="flex gap-6">
-        {timeUnits.map((unit) => (
-          <div
-            key={unit.label}
-            className="flex flex-col items-center justify-center xl:w-20 xl:h-20 w-16 h-16 rounded-full bg-white text-black shadow-md"
-          >
-            <p className=" font-semibold">{formatNumber(unit.value)}</p>
-            <p className="text-xs ">{unit.label}</p>
+    <div className="bg-black/70  rounded-xl px-6 py-4 w-fit mx-auto text-center shadow-md">
+      <div className="text-white font-semibold text-sm mb-2 flex items-center justify-center gap-2">
+        ⏰ <span>{t("musicOffer.limitedTimeOffer")}</span>
+      </div>
+
+      <div className="flex justify-center text-2xl sm:text-3xl font-bold text-green-400 space-x-3 sm:space-x-5">
+        {timeUnits.map((unit, index) => (
+          <div key={unit.label} className="flex items-center">
+            <span>{format(unit.value)}</span>
+            {index !== timeUnits.length - 1 && (
+              <span className="text-white px-1">:</span>
+            )}
           </div>
         ))}
+      </div>
+
+      <div className="text-gray-400 text-xs sm:text-sm mt-2">
+        Days : Hours : Minutes : Seconds
       </div>
     </div>
   );

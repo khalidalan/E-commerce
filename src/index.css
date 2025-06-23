@@ -9,7 +9,7 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -42,7 +42,6 @@ button {
   cursor: pointer;
 }
 
-
 @media (max-width: 1460px) {
   .container {
     padding: 0 20px;
@@ -60,15 +59,16 @@ button {
 }
 
 @media (max-width: 768px) {
- 
   body {
     font-size: 12px;
   }
 }
 
-@media (max-width: 400px) {
- 
-  body {
-    font-size: 10px;
-  }
+@font-face {
+  src: url(../public/Expo\ Arabic/ExpoArabic-Book.ttf) ;
+  font-family: "expo";
+}
+
+html[dir="rtl"] body {
+  font-family: "expo", serif;
 }

@@ -1,87 +1,24 @@
-// Cards.jsx
 import { useState } from "react";
 import ProductCard from "./ProductCard";
+import { useWishlist } from "../contexts/WishlistContext";
+import { useCart } from "../contexts/CartContext";
 
-const products = [
-  {
-    id: 1,
-    image: "/public/coat.png",
-    name: "The north coat",
-    discount: "-40%",
-    price: "$120",
-    oldPrice: "$160",
-    rating: 4,
-    reviews: 88,
-    isNew: false,
-    stockStatus: "In Stock"
-  },
-  {
-    id: 2,
-    image: "/public/bag.png",
-    name: "Gucci duffle bag",
-    discount: "-35%",
-    price: "$150",
-    oldPrice: "$260",
-    rating: 4,
-    reviews: 75,
-    isNew: true,
-    stockStatus: "Low Stock"
-  },
-  {
-    id: 3,
-    image: "/public/headphones.png",
-    name: "RGB liquid CPU Cooler",
-    discount: "-30%",
-    price: "$370",
-    oldPrice: "$400",
-    rating: 5,
-    reviews: 99,
-    isNew: false,
-    stockStatus: "In Stock"
-  },
-  {
-    id: 4,
-    image: "/public/bookshelf.png",
-    name: "Small BookSelf",
-    discount: "-25%",
-    price: "$375",
-    oldPrice: "$400",
-    rating: 4,
-    reviews: 58,
-    isNew: false,
-    stockStatus: "In Stock"
-  },
-  {
-    id: 5,
-    image: "/public/chair.png",
-    name: "S-Series Comfort Chair",
-    discount: "-25%",
-    price: "$375",
-    oldPrice: "$400",
-    rating: 4,
-    reviews: 58,
-    isNew: true,
-    stockStatus: "In Stock"
-  },
-];
-
-const Cards = ({ isWishlist = false }) => {
+const Cards = ({ isWishlist = false, products }) => {
   const [hovered, setHovered] = useState(null);
-  const [wishlistItems, setWishlistItems] = useState(new Set([1, 2, 3, 4]));
-  const [cartItems, setCartItems] = useState(new Set());
+  const { wishlistItems, toggleWishlist } = useWishlist();
+  const { addToCart, removeFromCart, cartItems } = useCart();
 
-  const toggleWishlist = (id, e) => {
+  const handleCartToggle = (id, e) => {
     e.stopPropagation();
-    setWishlistItems((prev) => {
-      const newSet = new Set(prev);
-      newSet.has(id) ? newSet.delete(id) : newSet.add(id);
-      return newSet;
-    });
-  };
+    const product = products.find((p) => p.id === id);
+    if (!product) return;
 
-  const addToCart = (id, e) => {
-    e.stopPropagation();
-    setCartItems((prev) => new Set([...prev, id]));
+    const isInCart = cartItems.some((item) => item.id === id);
+    if (isInCart) {
+      removeFromCart(id);
+    } else {
+      addToCart(product);
+    }
   };
 
   const displayProducts = isWishlist
@@ -97,16 +34,13 @@ const Cards = ({ isWishlist = false }) => {
           hovered={hovered}
           setHovered={setHovered}
           isWished={wishlistItems.has(product.id)}
-          isInCart={cartItems.has(product.id)}
+          isInCart={cartItems.some((item) => item.id === product.id)}
           toggleWishlist={toggleWishlist}
-          addToCart={addToCart}
+          toggleCart={handleCartToggle}
         />
       ))}
     </div>
   );
 };
-
-
-
 
 export default Cards;

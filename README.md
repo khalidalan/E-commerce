@@ -11,7 +11,7 @@
   <h3>🌟 A modern, fully responsive, multilingual e-commerce platform</h3>
   <p>Built with React and designed for the future of online shopping</p>
   
-  **🌐 [Live Demo](https://khalid-e-commerce.vercel.app/products) | 📚 [Documentation](#documentation) | 🐛 [Report Bug](https://github.com/yourusername/khalid-e-commerce/issues)**
+  **🌐 [Live Demo](https://khalid-e-commerce.vercel.app)**
 </div>
 
 ---
@@ -172,13 +172,14 @@ khalid-e-commerce/
 ## 🎨 Screenshots
 
 <div align="center">
-  <img src="https://via.placeholder.com/800x400/4F46E5/FFFFFF?text=Homepage+Preview" alt="Homepage" width="45%" />
-  <img src="https://via.placeholder.com/800x400/059669/FFFFFF?text=Products+Page" alt="Products" width="45%" />
+  <img src="https://github.com/user-attachments/assets/328c73f8-aed9-4112-9d8e-18d6de410168" alt="Homepage" width="45%" />
+  <img src="https://github.com/user-attachments/assets/7caf5f28-59de-497e-8873-0a9763cdb4ff" alt="Products" width="45%" />
 </div>
 
+
 <div align="center">
-  <img src="https://via.placeholder.com/800x400/DC2626/FFFFFF?text=Shopping+Cart" alt="Cart" width="45%" />
-  <img src="https://via.placeholder.com/800x400/7C3AED/FFFFFF?text=Checkout+Page" alt="Checkout" width="45%" />
+  <img src="https://github.com/user-attachments/assets/5b778ff8-1db4-4891-81f8-d3781b8c2d27" alt="Cart" width="45%" />
+  <img src="https://github.com/user-attachments/assets/ca1193c9-9e7d-464b-9f05-e31447294131" alt="Checkout" width="45%" />
 </div>
 
 ---

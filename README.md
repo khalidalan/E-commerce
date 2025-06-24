@@ -110,8 +110,6 @@ khalid-e-commerce/
 │   │   ├── 📄 en.json
 │   │   ├── 📄 ar.json
 │   │   └── 📄 de.json
-│   ├── 📁 hooks/           # Custom React hooks
-│   ├── 📁 utils/           # Utility functions
 │   ├── 📄 App.jsx          # Main App component
 │   ├── 📄 i18n.js          # Internationalization config
 │   └── 📄 main.jsx         # Entry point
@@ -231,43 +229,19 @@ Please [open an issue](https://github.com/khalidalan/E-commerce/issues) with det
 ## 👨‍💻 Author
 
 <div align="center">
-  <img src="https://avatars.githubusercontent.com/u/yourusername?v=4" width="100px" alt="Khalid" style="border-radius: 50%;" />
+  <img src="https://avatars.githubusercontent.com/u/khalidalan?v=4" width="100px" alt="Khalid" style="border-radius: 50%;" />
   <h3>Khalid</h3>
   <p>Full-Stack Developer passionate about creating amazing user experiences</p>
   
-  [![GitHub](https://img.shields.io/badge/-@yourusername-181717?style=flat-square&logo=github)](https://github.com/yourusername)
-  [![LinkedIn](https://img.shields.io/badge/-Khalid-0A66C2?style=flat-square&logo=linkedin)](https://linkedin.com/in/yourprofile)
-  [![Portfolio](https://img.shields.io/badge/-Portfolio-000000?style=flat-square&logo=vercel)](https://yourportfolio.com)
+  [![GitHub](https://img.shields.io/badge/-@khalidalan-181717?style=flat-square&logo=github)](https://github.com/khalidalan)
+  [![LinkedIn](https://img.shields.io/badge/-Khalid-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/khalid-qotb)
 </div>
 
 ---
 
-## 📝 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-- **React Team** - For the amazing framework
-- **Tailwind CSS** - For the utility-first CSS framework
-- **Vercel** - For seamless deployment
-- **Community** - For inspiration and support
-
----
-
-<div align="center">
-  <p>Made with ❤️ and lots of ☕</p>
-  <p>⭐ Star this repo if you found it helpful!</p>
-</div>
-
----
 
 ## 📞 Support
 
 If you have any questions or need help, feel free to reach out:
 
-- 📧 **Email**: your.email@example.com
-- 💬 **Discord**: YourDiscord#1234
-- 🐦 **Twitter**: [@yourusername](https://twitter.com/yourusername)
+- 📧 **Email**: khalidalan44@gmail.com

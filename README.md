@@ -159,7 +159,7 @@ khalid-e-commerce/
 
 | Metric | Score | Description |
 |--------|-------|-------------|
-| ⚡ **Performance** | 95/100 | Lightning fast load times |
+| ⚡ **Performance** | 98/100 | Lightning fast load times |
 | 📱 **Responsive** | 100% | Works on all screen sizes |
 | 🌍 **i18n Ready** | 3 Languages | English, Arabic, German |
 | 🎨 **UI/UX** | Modern | Clean and intuitive design |
@@ -212,25 +212,11 @@ khalid-e-commerce/
 
 ---
 
-## 🤝 Contributing
-
-We welcome contributions! Here's how you can help:
-
-1. **🍴 Fork** the repository
-2. **🌿 Create** a feature branch (`git checkout -b feature/AmazingFeature`)
-3. **💾 Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
-4. **📤 Push** to the branch (`git push origin feature/AmazingFeature`)
-5. **🔄 Open** a Pull Request
-
-### 🐛 **Found a Bug?**
-Please [open an issue](https://github.com/khalidalan/E-commerce/issues) with detailed information.
-
----
-
 ## 👨‍💻 Author
 
+
 <div align="center">
-  <img src="https://avatars.githubusercontent.com/u/khalidalan?v=4" width="100px" alt="Khalid" style="border-radius: 50%;" />
+  <img src="https://github.com/user-attachments/assets/4ecfa604-ea31-4582-802d-e1eba764acfd" width="100px" alt="Khalid" style="border-radius: 50%;" />
   <h3>Khalid</h3>
   <p>Full-Stack Developer passionate about creating amazing user experiences</p>
   
